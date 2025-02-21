@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="ball.png" id="ball" width="100px">
+    <img src="bucket.jpg" id="bucket" width="75px">
+    <script>
+        ball.style.position="absolute";
+        let t=0;
+        let l=0;
+        function ballFall(){
+            if(t>=550){
+                t=1
+                l=Math.random()*1000
+            }
+                t++;
+
+            ball.style.top=t+"px";
+            ball.style.left=l+"px"
+            setTimeout(ballFall,5);
+            
+         }
+        ballFall()
+
+
+
+        bucket.style.position = "absolute";
+      let b = document.body;
+      let left = 0;
+      let right= 0;
+      let up = 0;
+      let down = 0;
+      b.onkeydown = (e) => {
+
+        let key=e.key;
+        if(key=="ArrowUp"){
+            up-= 10;
+        bucket.style.top= up+ "px";
+        }
+           
+        if(key=="ArrowDown"){
+            up+= 10;
+        bucket.style.top= up+ "px";
+        }
+
+        if(key=="ArrowLeft"){
+            left-= 10;
+        bucket.style.left= left+ "px";
+        }
+
+        if(key=="ArrowRight"){
+            left+= 10;
+        bucket.style.left= left+ "px";
+        }
+
+        
+      };
+
+
+
+    </script>
+    
+</body>
+</html>
